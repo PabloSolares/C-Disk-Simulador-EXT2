@@ -9,6 +9,7 @@
 #include <filesystem>
 #include <cstring>
 #include <fstream>
+#include "mount.h"
 #include "structures.h"
 
 using namespace std;
@@ -54,7 +55,6 @@ namespace CmdMkDisk {
 	inline string mkdisk(int size, const string& unit , const string& path){
 		try{
 			string expandedPath = expandPath(path);
-			cout << expandedPath<< endl;
 			if (size <= 0) {
 				return "Error: El tamaño debe ser mayor a 0";
 			}
@@ -120,6 +120,7 @@ namespace CmdMkDisk {
 			struct tm* timeInfo = localtime(&mbr.mbr_creation_date);
 			strftime(timeStr, sizeof(timeStr), "%Y-%m-%d %H:%M:%S", timeInfo);
 			
+			CmdMount::registrarDiscoNuevo(expandedPath);
 			return "Disco creado exitosamente\n" +
 				string("  Ruta: ") + expandedPath + "\n" +
 				string("  Fecha: ") + timeStr + "\n" +

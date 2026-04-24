@@ -16,7 +16,7 @@ function App() {
 
 const manejarLogout = async () => {
     try {
-      await fetch('http://localhost:8081/api/logout', { 
+      await fetch('http://3.134.103.249:8081/api/logout', { 
         method: 'POST' 
       });
     } catch (error) {

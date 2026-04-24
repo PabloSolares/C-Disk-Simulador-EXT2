@@ -15,7 +15,7 @@ function Explorador({ sesionActiva, irALogin }) {
   const cargarDirectorio = async (path) => {
     setCargando(true);
     try {
-      const resp = await fetch('http://localhost:8081/api/explorar', {
+      const resp = await fetch('http://3.134.103.249:8081/api/explorar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: sesionActiva.id, path: path })

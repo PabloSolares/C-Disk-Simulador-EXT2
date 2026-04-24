@@ -9,7 +9,7 @@ function Discos({ onExplorar }) {
     setCargando(true);
     setError('');
     try {
-      const resp = await fetch('http://localhost:8081/api/discos');
+      const resp = await fetch('http://3.134.103.249:8081/api/discos');
       const data = await resp.json();
       
       if (data.error) {

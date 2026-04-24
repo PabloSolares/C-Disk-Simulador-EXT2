@@ -41,7 +41,7 @@ function Terminal() {
     }
     setConsola('Ejecutando en C++...\n');
     try {
-      const respuesta = await fetch('http://localhost:8081/exec', {
+      const respuesta = await fetch('http://3.134.103.249:8081/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ script: code })

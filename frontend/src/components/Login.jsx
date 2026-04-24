@@ -11,7 +11,7 @@ function Login({ onLoginExitosa }) {
     setCargando(true);
 
     try {
-      const respuesta = await fetch('http://localhost:8081/api/login', {
+      const respuesta = await fetch('http://3.134.103.249:8081/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 

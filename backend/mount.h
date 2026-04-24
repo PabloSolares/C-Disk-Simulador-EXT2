@@ -31,12 +31,20 @@ namespace CmdMount {
 		
 	};
 
+	
 	static map<string, MountedPartition> mountedPartitions;
 	
 	static map<string, char> diskLetters;
 
-	static char nxtDiskLetter = 'a';
 	
+
+	static char nxtDiskLetter = 'a';
+	inline void registrarDiscoNuevo(const string& path){
+        if(diskLetters.find(path) == diskLetters.end()){
+            diskLetters[path] = nxtDiskLetter++;
+        }
+    }
+
 	inline string expandPath(const string& path){
 		if(path.empty() || path[0] != '~'){
 			return path;
